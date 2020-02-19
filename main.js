@@ -35,7 +35,10 @@ class Main{
         console.log(hora.getFormato24())
         console.log(hora2.getFormato12())
         console.log(hora2.getFormato24())
+    }
 
+    Fecha(){
+        
     }
 }
 

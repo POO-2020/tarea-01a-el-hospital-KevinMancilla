@@ -6,9 +6,9 @@ export default class tiempo{
      * @param {string} periodo
      */
     constructor(hora,minutos,periodo){
-        this.hora = hora;
-        this.minutos = minutos;
-        this.periodo = periodo;
+        this.hora = hora
+        this.minutos = minutos
+        this.periodo = periodo
     }
         
 
@@ -17,7 +17,7 @@ export default class tiempo{
         }
         getFormato24(){
             if (this.hora !=12 && this.periodo=="pm"){
-                this.hora = this.hora + 12;
+                this.hora = this.hora + 12
             }
             return(`${this.hora}:${this.minutos}`)
 
