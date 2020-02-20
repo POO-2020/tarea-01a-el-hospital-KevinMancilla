@@ -1,8 +1,23 @@
-export default class fecha{
+export default class Fecha{
     constructor(fecha){
         this.fecha = fecha
         this.fechaActual = new Date()
         this.años = Math.floor(((this.fechaActual - this.fecha) / (1000 * 60 * 60 * 24) / 365));
+        this.mes = [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre",
+        ]
+        
     }
     getAños(){
         return this.años
@@ -21,11 +36,12 @@ export default class fecha{
     }
     
     getFecha(){
-        return (`${this.fecha.getDate()}/${this.fecha.getMonth()}/${this.fecha.getFullYear()}`)
+        return (`${this.fechaActual.getDate()}/${this.mes[this.fechaActual.getMonth()]}/${this.fechaActual.getFullYear()}`)
     }
 
     getDiaFecha(){
-        let dia = this.fecha.getDay()
+        let dia = this.fechaActual.getDay()
+    
         let semana = [
             "Domingo",
             "Lunes",
