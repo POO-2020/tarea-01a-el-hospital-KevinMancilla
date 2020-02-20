@@ -12,6 +12,9 @@ class Main{
         this.doctor = new Doctor(this.nombre1,"jefe","3121105426","cedula:23245")
         this.paciente = new Paciente(this.nombre1,new Fecha(new Date(2001, 8, 27)),"3121105426")
         this.tiempo = new tiempo(this.tiempo)
+        this.cita = new cita (new Fecha(new Date(2001,8,27)),this.tiempo,this.doctor,this.paciente)
+        this.fecha = new Fecha(this.fecha)
+        
     }
 
     Nombre(){
@@ -21,34 +24,46 @@ class Main{
     }
 
     Doctor(){
-        console.log(this.doctor.getPerfil())
+        console.log(`Datos del Doctor = ${this.doctor.getPerfil()}`)
     }
 
     Paciente(){
-        console.log(this.paciente.getPerfil())
+        console.log(`El paciente es: ${this.paciente.getPerfil()}`)
     }
 
     Tiempo(){
         let hora = new tiempo(3, 50, "am")
         let hora2 = new tiempo(4, 50, "pm")
-        console.log(hora.getFormato12())
-        console.log(hora.getFormato24())
-        console.log(hora2.getFormato12())
-        console.log(hora2.getFormato24())
+        console.log(`La hora esta programada para las ${hora.getFormato12()}`)
+        console.log(`La hora esta programada para las ${hora.getFormato24()}`)
+        console.log(`La hora esta programada para las ${hora2.getFormato12()}`)
+        console.log(`La hora esta programada para las ${hora2.getFormato24()}`)
+    }
+
+    Cita(){
+        console.log(`Cita programada para ${this.cita.getCita()}`)
     }
 
     Fecha(){
-        
+        let fechaP = new Fecha(27,8,2001)
+        console.log(`Son ${fechaP.getAños()} años`)
+        console.log(`Son ${fechaP.getMeses()} meses`)
+        console.log(`Son ${fechaP.getSemanas()} semanas`)
+        console.log(`Son ${fechaP.getDias()} dias `)
+        console.log(fechaP.getFecha())
+        console.log(fechaP.getDiaFecha())
     }
+    
 }
 
     let verificar = new Main()
-
-
 
     verificar.Nombre()
     verificar.Doctor()
     verificar.Paciente()
     verificar.Tiempo()
+    verificar.Cita()
+    verificar.Fecha()
+    
 
 
