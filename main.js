@@ -14,6 +14,8 @@ class Main{
         this.tiempo = new tiempo(this.tiempo)
         this.cita = new cita (new Fecha(new Date(2001,8,27)),this.tiempo,this.doctor,this.paciente)
         this.fecha = new Fecha(this.fecha)
+        this.hospital = new Hospital("Puerta de Hierro", "Av Pino Suarez","Num #674")
+        this.hora = new tiempo(3, 50, "am")
         
     }
 
@@ -53,7 +55,13 @@ class Main{
         console.log(fechaP.getFecha())
         console.log(fechaP.getDiaFecha())
     }
-    
+
+    Hospital(){
+            this.hospital.registrarDoctor(this.doctor)
+            this.hospital.registrarCita(this.cita)
+            this.hospital.listarDoctores()
+            this.hospital.listarCitas()
+    }
 }
 
     let verificar = new Main()
@@ -64,6 +72,7 @@ class Main{
     verificar.Tiempo()
     verificar.Cita()
     verificar.Fecha()
+    verificar.Hospital()
     
 
 
